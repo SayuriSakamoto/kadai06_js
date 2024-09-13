@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 30px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%; /* 画面全体をカバーする */
+    margin: 20px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: antiquewhite;
+    background-size: cover; /* 背景画像を画面全体にフィットさせる */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 上部から開始して、スクロール可能に */
+    color: #333;
+    overflow-y: auto; /* 縦スクロールを許可 */
+}
+
+.container {
+    max-width: 1200px; /* 横幅を広げて、グラフが大きく表示されるように調整 */
+    margin: 100px auto;
+    padding: 70px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b9d0b1
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b9d0b1;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+#resultText {
+    font-size: 18px;
+}
+
+canvas {
+    margin-top: 20px;
+    width: 100% !important;  /* グラフをコンテナの幅いっぱいに表示 */
+    height: auto !important;  /* 高さは自動調整 */
+}
+
+.family-section {
+    margin-top: 20px;
+}
+
+.family-member {
+    margin-bottom: 10px;
+}
+
+.family-member label {
+    margin-right: 10px;
+}
+
+button + button {
+    margin-top: 70%; /* 「家族を追加」と「シミュレーション開始」の間の距離を30pxに広げる */
+}

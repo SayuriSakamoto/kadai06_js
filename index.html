@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ライフプランシミュレーター</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.jsの読み込み -->
+</head>
+<body>
+    <div class="container">
+        <h1>ライフプランシミュレーター💰</h1>
+        <b1>将来のお金の心配をなくそう！退職までにいくら貯金・投資できそうかな？</b1>
+        
+        <form id="lifePlanForm">
+            <div class="input-group">
+                <label for="age">現在の年齢:</label>
+                <input type="number" id="age" min="0" max="100" required>
+            </div>
+
+            <div class="input-group">
+                <label for="currentSavings">現在の貯金・投資額 (万円):</label>
+                <input type="number" id="currentSavings" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="retirementAge">希望する退職年齢:</label>
+                <input type="number" id="retirementAge" min="0" max="100" required>
+            </div>
+
+            <div class="input-group">
+                <label for="monthlySavings">月々の貯金・投資額 (万円):</label>
+                <input type="number" id="monthlySavings" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="interestRate">想定利率 (% 年率):</label>
+                <input type="number" id="interestRate" step="0.1" required>
+            </div>
+
+            <div class="input-group">
+                <label for="annualIncome">年間の手取り収入 (万円):</label>
+                <input type="number" id="annualIncome" min="0" required>
+            </div>
+
+            <div class="input-group">
+                <label for="annualExpenses">年間の支出 (万円):</label>
+                <input type="number" id="annualExpenses" min="0" required>
+            </div>
+
+            <!-- 大きな支出を追加するエリア -->
+            <div class="large-expense-section">
+                <h2>特定の年の大きな支出を追加</h2>
+                <div id="largeExpenses"></div>
+                <button type="button" onclick="addLargeExpense()">大きな支出を追加</button>
+            </div>
+
+            <!-- 家族の追加エリア -->
+            <div class="family-section">
+                <h2>家族を追加</h2>
+                <div id="familyMembers"></div>
+                <button type="button" onclick="addFamilyMember()">家族を追加</button>
+            </div>
+
+            <button type="button" onclick="calculateLifePlan()">シミュレーション開始</button>
+        </form>
+
+        <div id="result" class="result">
+            <h2>シミュレーション結果</h2>
+            <p id="resultText">ここに結果が表示されます。</p>
+        </div>
+
+        <canvas id="savingsChart" width="400" height="200"></canvas> <!-- グラフ表示用のキャンバス -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
